@@ -22,20 +22,19 @@ const character = {
 };
 
 export default function showSpecialAttack(char) {
-  const result = [];
   const { special } = char;
 
-  special.forEach((item) => {
+  const resultArr = special.map((item) => {
     const {
       id = 'no id', name = 'no name', icon = 'no icon', description = 'Описание недоступно',
     } = item;
     const specialAttack = {
       id, name, icon, description,
     };
-    result.push(specialAttack);
+    return specialAttack;
   });
 
-  return result;
+  return resultArr;
 }
 
 console.log(showSpecialAttack(character));
